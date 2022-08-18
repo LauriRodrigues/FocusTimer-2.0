@@ -1,0 +1,74 @@
+:root {
+  --main-dark-color: #323238;
+  --main-light-color: #fff;
+  --bg-button-gray: #E1E1E6;
+  --bg-button-blue: #02799D;
+
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+/* ----Timer----*/
+
+span {
+  font-size: 12.6rem;
+  font-weight: 500;
+  color: var(--main-dark-color);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls button {
+  background: none;
+}
+
+/* ----Sounds---- */
+
+.sounds-container {
+  display: grid;
+  grid-template: "A B"
+                 "C D";
+  gap: 3.2rem;               
+}
+
+.sounds-container button {
+  padding: 4.8rem;
+  border-radius: 2.4rem;
+  background-color: var(--bg-button-gray);
+}
+
+.sounds-container button:focus {
+  background: var(--bg-button-blue);
+}
+
+.sounds-container button:focus svg path {
+  fill: var(--main-light-color);
+}
