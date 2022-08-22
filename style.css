@@ -2,7 +2,7 @@
   --main-dark-color: #323238;
   --main-light-color: #fff;
   --bg-button-gray: #E1E1E6;
-  --bg-button-blue: #02799D;
+  --bg-button-focus: #b14c5d;
 
   font-size: 62.5%;
 }
@@ -50,6 +50,10 @@ span {
   background: none;
 }
 
+.hide {
+  display: none;
+}
+
 /* ----Sounds---- */
 
 .sounds-container {
@@ -66,7 +70,7 @@ span {
 }
 
 .sounds-container button:focus {
-  background: var(--bg-button-blue);
+  background: var(--bg-button-focus);
 }
 
 .sounds-container button:focus svg path {
