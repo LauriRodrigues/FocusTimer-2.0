@@ -69,10 +69,10 @@ span {
   background-color: var(--bg-button-gray);
 }
 
-.sounds-container button:focus {
+.sounds-container button.selected {
   background: var(--bg-button-focus);
 }
 
-.sounds-container button:focus svg path {
+.sounds-container button.selected svg path {
   fill: var(--main-light-color);
 }

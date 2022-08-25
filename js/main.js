@@ -19,7 +19,6 @@ let minutes = Number(minutesDisplay.textContent)
 
 const buttonPressAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true")
 const kitchenTimer = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true")
-
 const forestAudio = new Audio("./assets/audio/Floresta.wav")
 const rainAudio = new Audio("../assets/audio/Chuva.wav")
 const coffeeShopAudio = new Audio("../assets/audio/Cafeteria.wav")
@@ -59,7 +58,6 @@ buttonDecrease.addEventListener('click', () => {
 
 forestButton.addEventListener('click', () => {
   forest()
-  playPause()
 })
 
 rainButton.addEventListener('click', () => {
@@ -104,19 +102,39 @@ function timeEnd() {
 }
 
 function forest() {
-  forestAudio.play()
+  forestButton.classList.toggle('selected')
+    if (forestButton.classList.contains('selected') == true) {
+    forestAudio.play()
+    } else {
+      forestAudio.pause()
+    }
 }
 
 function rain() {
-  rainAudio.play()
+  rainButton.classList.toggle('selected')
+    if (rainButton.classList.contains('selected') == true) {
+    rainAudio.play()
+    } else {
+      rainAudio.pause()
+    }
 }
 
 function coffeeShop() {
-  coffeeShopAudio.play()
+  coffeeShopButton.classList.toggle('selected')
+    if (coffeeShopButton.classList.contains('selected') == true) {
+    coffeeShopAudio.play()
+    } else {
+      coffeeShopAudio.pause()
+    }
 }
 
 function fire() {
-  fireAudio.play()
+  fireButton.classList.toggle('selected')
+    if (fireButton.classList.contains('selected') == true) {
+    fireAudio.play()
+    } else {
+      fireAudio.pause()
+    }
 }
 
 // --------------buttons------------------------
