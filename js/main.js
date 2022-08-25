@@ -9,12 +9,26 @@ let buttonDecrease = document.querySelector('.decrease');
 let minutesDisplay = document.querySelector('.minutes')
 let secondsDisplay = document.querySelector('.seconds')
 
+let forestButton = document.querySelector('.forest')
+let rainButton = document.querySelector('.rain')
+let coffeeShopButton = document.querySelector('.coffee-shop')
+let fireButton = document.querySelector('.fire')
+
 let timerTimeOut
 let minutes = Number(minutesDisplay.textContent)
 
 const buttonPressAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true")
 const kitchenTimer = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true")
 
+const forestAudio = new Audio("./assets/audio/Floresta.wav")
+const rainAudio = new Audio("../assets/audio/Chuva.wav")
+const coffeeShopAudio = new Audio("../assets/audio/Cafeteria.wav")
+const fireAudio = new Audio("../assets/audio/Lareira.wav")
+
+forestAudio.loop = true
+rainAudio.loop = true
+coffeeShopAudio.loop = true
+fireAudio.loop = true
 
 // ----------events-------------------------
 
@@ -41,6 +55,23 @@ buttonIncrease.addEventListener('click', function() {
 buttonDecrease.addEventListener('click', function() {
   decrease5Minutes()
   pressButton()
+})
+
+forestButton.addEventListener('click', function() {
+  forest()
+  playPause()
+})
+
+rainButton.addEventListener('click', function() {
+  rain()
+})
+
+coffeeShopButton.addEventListener('click', function() {
+  coffeeShop()
+})
+
+fireButton.addEventListener('click', function() {
+  fire()
 })
 
 // ------------functions------------------------
@@ -70,6 +101,22 @@ function pressButton() {
 
 function timeEnd() {
   kitchenTimer.play()
+}
+
+function forest() {
+  forestAudio.play()
+}
+
+function rain() {
+  rainAudio.play()
+}
+
+function coffeeShop() {
+  coffeeShopAudio.play()
+}
+
+function fire() {
+  fireAudio.play()
 }
 
 // --------------buttons------------------------
