@@ -1,7 +1,8 @@
 :root {
-  --main-dark-color: #323238;
-  --main-light-color: #fff;
-  --bg-button-gray: #E1E1E6;
+  --dark-color: #323238;
+  --light-color: #fff;
+  --main-dark-color: #4c4c50;
+  --main-light-color: #d9d9dc;
   --bg-button-focus: #b14c5d;
 
   font-size: 62.5%;
@@ -16,16 +17,38 @@
 body {
   font-size: 1.6rem;
   font-family: 'Roboto', sans-serif;
-}
-
-main {
-  width: 100vw;
+  background-color: var(--dark-color);
+  
   height: 100vh;
 
   display: flex;
-  justify-content:space-evenly;
+  justify-content: center;
+  align-items: center;
+}
+
+body.light {
+  background-color: var(--light-color)
+}
+
+main {
+  background-color:var(--main-dark-color);
+  
+  width: 90rem;
+  padding: 5rem;
+
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 
+  border-radius: 4rem;
+  box-shadow: inset 5px 5px 10px #29292a52,
+              inset -5px -5px 10px #5a5a5a7e;
+}
+
+body.light main {
+  background-color: var(--main-light-color);
+  box-shadow: inset 5px 5px 10px #a9a9aa77,
+              inset -5px -5px 10px #ffffff7e;
 }
 
 button {
@@ -33,12 +56,26 @@ button {
   cursor: pointer;
 }
 
+/* ----Toggle----*/
+
+header button {
+  background: none;
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+
+}
+
 /* ----Timer----*/
 
 span {
   font-size: 12.6rem;
   font-weight: 500;
-  color: var(--main-dark-color);
+  color: var(--light-color);
+}
+
+body.light span {
+  color: var(--dark-color);
 }
 
 .controls {
@@ -48,6 +85,14 @@ span {
 
 .controls button {
   background: none;
+}
+
+.controls button svg path {
+  fill: var(--light-color);
+}
+
+body.light .controls button svg path {
+  fill: var(--dark-color);
 }
 
 .hide {
@@ -66,13 +111,27 @@ span {
 .sounds-container button {
   padding: 4.8rem;
   border-radius: 2.4rem;
-  background-color: var(--bg-button-gray);
+  background-color: var(--main-light-color);
+  box-shadow: -5px -5px 8px #6c6b6b7a, 
+              5px 5px 8px #1515157a;
+}
+
+body.light .sounds-container button {
+  box-shadow: -5px -5px 8px #f5f2f27a, 
+              5px 5px 8px #a9a9aa7a; 
 }
 
 .sounds-container button.selected {
   background: var(--bg-button-focus);
+  box-shadow: inset 5px 5px 10px #722d39cb,
+              inset -5px -5px 10px #bb5263;
+}
+
+body.light .sounds-container button.selected {
+  box-shadow: inset 5px 5px 10px #722d39cb,
+              inset -5px -5px 10px #bb5263;
 }
 
 .sounds-container button.selected svg path {
-  fill: var(--main-light-color);
+  fill: var(--light-color);
 }

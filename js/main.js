@@ -1,10 +1,15 @@
 // ------------elements----------------------
 
-const buttonPlay = document.querySelector('.play');
-const buttonPause = document.querySelector('.pause');
-const buttonStop = document.querySelector('.stop');
-const buttonIncrease = document.querySelector('.increase');
-const buttonDecrease = document.querySelector('.decrease');
+const body = document.querySelector('body')
+
+const buttonLightMode = document.querySelector('.lightModeIcon')
+const buttonDarkMode = document.querySelector('.darkModeIcon')
+
+const buttonPlay = document.querySelector('.play')
+const buttonPause = document.querySelector('.pause')
+const buttonStop = document.querySelector('.stop')
+const buttonIncrease = document.querySelector('.increase')
+const buttonDecrease = document.querySelector('.decrease')
 
 const minutesDisplay = document.querySelector('.minutes')
 const secondsDisplay = document.querySelector('.seconds')
@@ -30,6 +35,14 @@ coffeeShopAudio.loop = true
 fireAudio.loop = true
 
 // ----------events-------------------------
+
+buttonLightMode.addEventListener('click', () => {
+  darkMode()
+})
+
+buttonDarkMode.addEventListener('click', () => {
+  lightMode()
+})
 
 buttonPlay.addEventListener('click', () => {
   play()
@@ -73,6 +86,20 @@ fireButton.addEventListener('click', () => {
 })
 
 // ------------functions------------------------
+
+function darkMode() {
+  buttonLightMode.classList.add('hide')
+  buttonDarkMode.classList.remove('hide')
+  
+  body.classList.remove('light')
+}
+
+function lightMode() {
+  buttonDarkMode.classList.add('hide')
+  buttonLightMode.classList.remove('hide')
+
+  body.classList.add('light')
+}
 
 function updateTimerDisplay(minutes, seconds) {
   minutesDisplay.textContent = String(minutes).padStart(2, "0")
