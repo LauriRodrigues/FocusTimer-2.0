@@ -1,18 +1,18 @@
 // ------------elements----------------------
 
-let buttonPlay = document.querySelector('.play');
-let buttonPause = document.querySelector('.pause');
-let buttonStop = document.querySelector('.stop');
-let buttonIncrease = document.querySelector('.increase');
-let buttonDecrease = document.querySelector('.decrease');
+const buttonPlay = document.querySelector('.play');
+const buttonPause = document.querySelector('.pause');
+const buttonStop = document.querySelector('.stop');
+const buttonIncrease = document.querySelector('.increase');
+const buttonDecrease = document.querySelector('.decrease');
 
-let minutesDisplay = document.querySelector('.minutes')
-let secondsDisplay = document.querySelector('.seconds')
+const minutesDisplay = document.querySelector('.minutes')
+const secondsDisplay = document.querySelector('.seconds')
 
-let forestButton = document.querySelector('.forest')
-let rainButton = document.querySelector('.rain')
-let coffeeShopButton = document.querySelector('.coffee-shop')
-let fireButton = document.querySelector('.fire')
+const forestButton = document.querySelector('.forest')
+const rainButton = document.querySelector('.rain')
+const coffeeShopButton = document.querySelector('.coffee-shop')
+const fireButton = document.querySelector('.fire')
 
 let timerTimeOut
 let minutes = Number(minutesDisplay.textContent)
@@ -32,45 +32,45 @@ fireAudio.loop = true
 
 // ----------events-------------------------
 
-buttonPlay.addEventListener('click', function() {
+buttonPlay.addEventListener('click', () => {
   play()
   pressButton()
 })
 
-buttonPause.addEventListener('click', function() {
+buttonPause.addEventListener('click', () => {
   pause()
   pressButton()
 })
 
-buttonStop.addEventListener('click', function() {
+buttonStop.addEventListener('click', () => {
   reset()
   pressButton()
 })
 
-buttonIncrease.addEventListener('click', function() {
+buttonIncrease.addEventListener('click', () => {
   increase5Minutes()
   pressButton()
 })
 
-buttonDecrease.addEventListener('click', function() {
+buttonDecrease.addEventListener('click', () => {
   decrease5Minutes()
   pressButton()
 })
 
-forestButton.addEventListener('click', function() {
+forestButton.addEventListener('click', () => {
   forest()
   playPause()
 })
 
-rainButton.addEventListener('click', function() {
+rainButton.addEventListener('click', () => {
   rain()
 })
 
-coffeeShopButton.addEventListener('click', function() {
+coffeeShopButton.addEventListener('click', () => {
   coffeeShop()
 })
 
-fireButton.addEventListener('click', function() {
+fireButton.addEventListener('click', () => {
   fire()
 })
 
