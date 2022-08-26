@@ -19,6 +19,11 @@ const rainButton = document.querySelector('.rain')
 const coffeeShopButton = document.querySelector('.coffee-shop')
 const fireButton = document.querySelector('.fire')
 
+const forestVolume = document.querySelector('#forestVolume')
+const rainVolume = document.querySelector('#rainVolume')
+const coffeeShopVolume = document.querySelector('#coffeeShopVolume')
+const fireVolume = document.querySelector('#fireVolume')
+
 let timerTimeOut
 let minutes = Number(minutesDisplay.textContent)
 
@@ -83,6 +88,22 @@ coffeeShopButton.addEventListener('click', () => {
 
 fireButton.addEventListener('click', () => {
   fire()
+})
+
+forestVolume.addEventListener("input", function () {
+  forestAudio.volume = forestVolume.value
+})
+
+rainVolume.addEventListener("input", function () {
+  rainAudio.volume = rainVolume.value
+})
+
+coffeeShopVolume.addEventListener("input", function () {
+  coffeeShopAudio.volume = coffeeShopVolume.value
+})
+
+fireVolume.addEventListener("input", function () {
+  fireAudio.volume = fireVolume.value
 })
 
 // ------------functions------------------------
